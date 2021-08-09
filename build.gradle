@@ -2,17 +2,19 @@
 
 buildscript {
     repositories {
+        google()
         jcenter()
     }
     dependencies {
         //JitPack
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath "com.android.tools.build:gradle:4.2.1"
     }
 }
 
 allprojects {
-    repositories {
+    repositories { 
+       
         jcenter()
         maven { url "https://jitpack.io" }
         maven {
