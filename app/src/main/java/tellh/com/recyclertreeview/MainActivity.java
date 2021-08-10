@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import tellh.com.recyclertreeview.bean.Dir;
+import tellh.com.recyclertreeview.bean.Region;
 import tellh.com.recyclertreeview.bean.File;
 import tellh.com.recyclertreeview.viewbinder.DirectoryNodeBinder;
 import tellh.com.recyclertreeview.viewbinder.FileNodeBinder;
@@ -34,18 +34,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void initData() {
         List<TreeNode> nodes = new ArrayList<>();
-        TreeNode<Dir> app = new TreeNode<>(new Dir("app"));
+        TreeNode<Region> app = new TreeNode<>(new Region("app"));
         nodes.add(app);
         app.addChild(
-                new TreeNode<>(new Dir("manifests"))
-                        .addChild(new TreeNode<>(new File("AndroidManifest.xml")))
+                new TreeNode<Region>(new Region("manifests"))
+                        .addChild(new TreeNode<File>(new File("AndroidManifest.xml")))
         );
         app.addChild(
-                new TreeNode<>(new Dir("java")).addChild(
-                        new TreeNode<>(new Dir("tellh")).addChild(
-                                new TreeNode<>(new Dir("com")).addChild(
-                                        new TreeNode<>(new Dir("recyclertreeview"))
-                                                .addChild(new TreeNode<>(new File("Dir")))
+                new TreeNode<>(new Region("java")).addChild(
+                        new TreeNode<>(new Region("tellh")).addChild(
+                                new TreeNode<>(new Region("com")).addChild(
+                                        new TreeNode<>(new Region("recyclertreeview"))
+                                                .addChild(new TreeNode<>(new File("Region")))
                                                 .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
                                                 .addChild(new TreeNode<>(new File("File")))
                                                 .addChild(new TreeNode<>(new File("FileNodeBinder")))
@@ -54,19 +54,102 @@ public class MainActivity extends AppCompatActivity {
                         )
                 )
         );
-        TreeNode<Dir> res = new TreeNode<>(new Dir("res"));
+        TreeNode<Region> res = new TreeNode<>(new Region("res"));
         nodes.add(res);
         res.addChild(
-                new TreeNode<>(new Dir("layout")).lock() // lock this TreeNode
+                new TreeNode<>(new Region("layout")).lock() // lock this TreeNode
                         .addChild(new TreeNode<>(new File("activity_main.xml")))
                         .addChild(new TreeNode<>(new File("item_dir.xml")))
                         .addChild(new TreeNode<>(new File("item_file.xml")))
         );
         res.addChild(
-                new TreeNode<>(new Dir("mipmap"))
+                new TreeNode<>(new Region("mipmap"))
                         .addChild(new TreeNode<>(new File("ic_launcher.png")))
         );
-
+        TreeNode<Region> mgzx = new TreeNode<>(new Region("美国专线"));
+        mgzx.addChild(new TreeNode<>(new Region("java")).addChild(
+                new TreeNode<>(new Region("tellh")).addChild(
+                        new TreeNode<>(new Region("com")).addChild(
+                                new TreeNode<>(new Region("recyclertreeview"))
+                                        .addChild(new TreeNode<>(new File("Region")))
+                                        .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
+                                        .addChild(new TreeNode<>(new File("File")))
+                                        .addChild(new TreeNode<>(new File("FileNodeBinder")))
+                                        .addChild(new TreeNode<>(new File("TreeViewBinder")))
+                        )
+                )
+        ));
+        TreeNode<Region> rbzx = new TreeNode<>(new Region("日本专线"));
+        rbzx.addChild(new TreeNode<>(new Region("java")).addChild(
+                new TreeNode<>(new Region("tellh")).addChild(
+                        new TreeNode<>(new Region("com")).addChild(
+                                new TreeNode<>(new Region("recyclertreeview"))
+                                        .addChild(new TreeNode<>(new File("Region")))
+                                        .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
+                                        .addChild(new TreeNode<>(new File("File")))
+                                        .addChild(new TreeNode<>(new File("FileNodeBinder")))
+                                        .addChild(new TreeNode<>(new File("TreeViewBinder")))
+                        )
+                )
+        ));
+        TreeNode<Region> zgzx = new TreeNode<>(new Region("中国专线"));
+        zgzx.addChild(new TreeNode<>(new Region("java")).addChild(
+                new TreeNode<>(new Region("tellh")).addChild(
+                        new TreeNode<>(new Region("com")).addChild(
+                                new TreeNode<>(new Region("recyclertreeview"))
+                                        .addChild(new TreeNode<>(new File("Region")))
+                                        .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
+                                        .addChild(new TreeNode<>(new File("File")))
+                                        .addChild(new TreeNode<>(new File("FileNodeBinder")))
+                                        .addChild(new TreeNode<>(new File("TreeViewBinder")))
+                        )
+                )
+        ));
+        TreeNode<Region> fzzx = new TreeNode<>(new Region("非洲专线"));
+        fzzx.addChild(new TreeNode<>(new Region("java")).addChild(
+                new TreeNode<>(new Region("tellh")).addChild(
+                        new TreeNode<>(new Region("com")).addChild(
+                                new TreeNode<>(new Region("recyclertreeview"))
+                                        .addChild(new TreeNode<>(new File("Region")))
+                                        .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
+                                        .addChild(new TreeNode<>(new File("File")))
+                                        .addChild(new TreeNode<>(new File("FileNodeBinder")))
+                                        .addChild(new TreeNode<>(new File("TreeViewBinder")))
+                        )
+                )
+        ));
+        TreeNode<Region> ozzx = new TreeNode<>(new Region("欧洲专线"));
+        ozzx.addChild(new TreeNode<>(new Region("java")).addChild(
+                new TreeNode<>(new Region("tellh")).addChild(
+                        new TreeNode<>(new Region("com")).addChild(
+                                new TreeNode<>(new Region("recyclertreeview"))
+                                        .addChild(new TreeNode<>(new File("Region")))
+                                        .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
+                                        .addChild(new TreeNode<>(new File("File")))
+                                        .addChild(new TreeNode<>(new File("FileNodeBinder")))
+                                        .addChild(new TreeNode<>(new File("TreeViewBinder")))
+                        )
+                )
+        ));
+        TreeNode<Region> bmzx = new TreeNode<>(new Region("北美专线"));
+        bmzx.addChild(new TreeNode<>(new Region("java")).addChild(
+                new TreeNode<>(new Region("tellh")).addChild(
+                        new TreeNode<>(new Region("com")).addChild(
+                                new TreeNode<>(new Region("recyclertreeview"))
+                                        .addChild(new TreeNode<>(new File("Region")))
+                                        .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
+                                        .addChild(new TreeNode<>(new File("File")))
+                                        .addChild(new TreeNode<>(new File("FileNodeBinder")))
+                                        .addChild(new TreeNode<>(new File("TreeViewBinder")))
+                        )
+                )
+        ));
+        app.addChild(mgzx);
+        app.addChild(rbzx);
+        app.addChild(zgzx);
+        app.addChild(fzzx);
+        app.addChild(ozzx);
+        app.addChild(bmzx);
         rv.setLayoutManager(new LinearLayoutManager(this));
         adapter = new TreeViewAdapter(nodes, Arrays.asList(new FileNodeBinder(), new DirectoryNodeBinder()));
         // whether collapse child nodes when their parent node was close.
@@ -98,7 +181,6 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         rv = (RecyclerView) findViewById(R.id.rv);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
