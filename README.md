@@ -1,5 +1,6 @@
 # RecyclerTreeView
 [![](https://jitpack.io/v/TellH/RecyclerTreeView.svg)](https://jitpack.io/#TellH/RecyclerTreeView)</br>
+使用RecyclerView实现TreeView(类似文件管理展开，折叠)
 TreeView implement in Android with RecyclerView..
 
 ## Effect
