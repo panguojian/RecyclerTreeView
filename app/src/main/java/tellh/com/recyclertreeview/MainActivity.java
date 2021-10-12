@@ -37,22 +37,11 @@ public class MainActivity extends AppCompatActivity {
         TreeNode<Dir> app = new TreeNode<>(new Dir("app"));
         nodes.add(app);
         app.addChild(
-                new TreeNode<Dir>(new Dir("manifests"))
-                        .addChild(new TreeNode<File>(new File("AndroidManifest.xml")))
+                new TreeNode(new Dir("manifests"))
+                        .addChild(new TreeNode(new File("AndroidManifest.xml")))
         );
         app.addChild(
-                new TreeNode<>(new Dir("java")).addChild(
-                        new TreeNode<>(new Dir("tellh")).addChild(
-                                new TreeNode<>(new Dir("com")).addChild(
-                                        new TreeNode<>(new Dir("recyclertreeview"))
-                                                .addChild(new TreeNode<>(new File("Dir")))
-                                                .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
-                                                .addChild(new TreeNode<>(new File("File")))
-                                                .addChild(new TreeNode<>(new File("FileNodeBinder")))
-                                                .addChild(new TreeNode<>(new File("TreeViewBinder")))
-                                )
-                        )
-                )
+                new TreeNode(new Dir("java"))
         );
         TreeNode<Dir> res = new TreeNode<>(new Dir("res"));
         nodes.add(res);
@@ -66,90 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 new TreeNode<>(new Dir("mipmap"))
                         .addChild(new TreeNode<>(new File("ic_launcher.png")))
         );
-        TreeNode<Dir> mgzx = new TreeNode<>(new Dir("美国专线"));
-        mgzx.addChild(new TreeNode<>(new Dir("java")).addChild(
-                new TreeNode<>(new Dir("tellh")).addChild(
-                        new TreeNode<>(new Dir("com")).addChild(
-                                new TreeNode<>(new Dir("recyclertreeview"))
-                                        .addChild(new TreeNode<>(new File("Dir")))
-                                        .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
-                                        .addChild(new TreeNode<>(new File("File")))
-                                        .addChild(new TreeNode<>(new File("FileNodeBinder")))
-                                        .addChild(new TreeNode<>(new File("TreeViewBinder")))
-                        )
-                )
-        ));
-        TreeNode<Dir> rbzx = new TreeNode<>(new Dir("日本专线"));
-        rbzx.addChild(new TreeNode<>(new Dir("java")).addChild(
-                new TreeNode<>(new Dir("tellh")).addChild(
-                        new TreeNode<>(new Dir("com")).addChild(
-                                new TreeNode<>(new Dir("recyclertreeview"))
-                                        .addChild(new TreeNode<>(new File("Dir")))
-                                        .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
-                                        .addChild(new TreeNode<>(new File("File")))
-                                        .addChild(new TreeNode<>(new File("FileNodeBinder")))
-                                        .addChild(new TreeNode<>(new File("TreeViewBinder")))
-                        )
-                )
-        ));
-        TreeNode<Dir> zgzx = new TreeNode<>(new Dir("中国专线"));
-        zgzx.addChild(new TreeNode<>(new Dir("java")).addChild(
-                new TreeNode<>(new Dir("tellh")).addChild(
-                        new TreeNode<>(new Dir("com")).addChild(
-                                new TreeNode<>(new Dir("recyclertreeview"))
-                                        .addChild(new TreeNode<>(new File("Dir")))
-                                        .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
-                                        .addChild(new TreeNode<>(new File("File")))
-                                        .addChild(new TreeNode<>(new File("FileNodeBinder")))
-                                        .addChild(new TreeNode<>(new File("TreeViewBinder")))
-                        )
-                )
-        ));
-        TreeNode<Dir> fzzx = new TreeNode<>(new Dir("非洲专线"));
-        fzzx.addChild(new TreeNode<>(new Dir("java")).addChild(
-                new TreeNode<>(new Dir("tellh")).addChild(
-                        new TreeNode<>(new Dir("com")).addChild(
-                                new TreeNode<>(new Dir("recyclertreeview"))
-                                        .addChild(new TreeNode<>(new File("Dir")))
-                                        .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
-                                        .addChild(new TreeNode<>(new File("File")))
-                                        .addChild(new TreeNode<>(new File("FileNodeBinder")))
-                                        .addChild(new TreeNode<>(new File("TreeViewBinder")))
-                        )
-                )
-        ));
-        TreeNode<Dir> ozzx = new TreeNode<>(new Dir("欧洲专线"));
-        ozzx.addChild(new TreeNode<>(new Dir("java")).addChild(
-                new TreeNode<>(new Dir("tellh")).addChild(
-                        new TreeNode<>(new Dir("com")).addChild(
-                                new TreeNode<>(new Dir("recyclertreeview"))
-                                        .addChild(new TreeNode<>(new File("Dir")))
-                                        .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
-                                        .addChild(new TreeNode<>(new File("File")))
-                                        .addChild(new TreeNode<>(new File("FileNodeBinder")))
-                                        .addChild(new TreeNode<>(new File("TreeViewBinder")))
-                        )
-                )
-        ));
-        TreeNode<Dir> bmzx = new TreeNode<>(new Dir("北美专线"));
-        bmzx.addChild(new TreeNode<>(new Dir("java")).addChild(
-                new TreeNode<>(new Dir("tellh")).addChild(
-                        new TreeNode<>(new Dir("com")).addChild(
-                                new TreeNode<>(new Dir("recyclertreeview"))
-                                        .addChild(new TreeNode<>(new File("Dir")))
-                                        .addChild(new TreeNode<>(new File("DirectoryNodeBinder")))
-                                        .addChild(new TreeNode<>(new File("File")))
-                                        .addChild(new TreeNode<>(new File("FileNodeBinder")))
-                                        .addChild(new TreeNode<>(new File("TreeViewBinder")))
-                        )
-                )
-        ));
-        app.addChild(mgzx);
-        app.addChild(rbzx);
-        app.addChild(zgzx);
-        app.addChild(fzzx);
-        app.addChild(ozzx);
-        app.addChild(bmzx);
+
         rv.setLayoutManager(new LinearLayoutManager(this));
         adapter = new TreeViewAdapter(nodes, Arrays.asList(new FileNodeBinder(), new DirectoryNodeBinder()));
         // whether collapse child nodes when their parent node was close.
