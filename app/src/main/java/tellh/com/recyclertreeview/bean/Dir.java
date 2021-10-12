@@ -7,10 +7,10 @@ import tellh.com.recyclertreeview_lib.LayoutItemType;
  * Created by tlh on 2016/10/1 :)
  */
 
-public class Region implements LayoutItemType {
+public class Dir implements LayoutItemType {
     public String dirName;
 
-    public Region(String dirName) {
+    public Dir(String dirName) {
         this.dirName = dirName;
     }
 

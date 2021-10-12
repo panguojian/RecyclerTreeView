@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import tellh.com.recyclertreeview.R;
-import tellh.com.recyclertreeview.bean.Region;
+import tellh.com.recyclertreeview.bean.Dir;
 import tellh.com.recyclertreeview_lib.TreeNode;
 import tellh.com.recyclertreeview_lib.TreeViewBinder;
 
@@ -25,7 +25,7 @@ public class DirectoryNodeBinder extends TreeViewBinder<DirectoryNodeBinder.View
         holder.ivArrow.setImageResource(R.drawable.ic_keyboard_arrow_right_black_18dp);
         int rotateDegree = node.isExpand() ? 90 : 0;
         holder.ivArrow.setRotation(rotateDegree);
-        Region regionNode = (Region) node.getContent();
+        Dir regionNode = (Dir) node.getContent();
         holder.tvName.setText(regionNode.dirName);
         if (node.isLeaf())
             holder.ivArrow.setVisibility(View.INVISIBLE);
