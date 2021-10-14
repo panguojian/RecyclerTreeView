@@ -37,32 +37,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void initData() {
         List<TreeNode> nodes = new ArrayList<>();
-        TreeNode<Dir> app = new TreeNode<>(new Dir("app"));
-        nodes.add(app);
-        app.addChild(
-                new TreeNode(new Dir("manifests"))
-                        .addChild(new TreeNode(new File("AndroidManifest.xml")))
-        );
-        app.addChild(
-                new TreeNode(new Dir("java"))
-        );
-        TreeNode<Dir> res = new TreeNode<>(new Dir("res"));
-        nodes.add(res);
-        res.addChild(
-                new TreeNode<>(new Dir("layout")).lock() // lock this TreeNode
-                        .addChild(new TreeNode<>(new File("activity_main.xml")))
-                        .addChild(new TreeNode<>(new File("item_dir.xml")))
-                        .addChild(new TreeNode<>(new File("item_file.xml")))
-        );
-        res.addChild(
-                new TreeNode<>(new Dir("mipmap"))
-                        .addChild(new TreeNode<>(new File("ic_launcher.png")))
-        );
+
+        nodes.add((new TreeNode(new Dir("目录一"))).addChild(new TreeNode(new File("文件一"))));
+        nodes.add(new TreeNode(new Dir("目录二")));
+        nodes.add(new TreeNode(new Dir("目录三")));
+        nodes.add(new TreeNode((new Dir("目录四"))).addChild(new TreeNode(new File("文件二"))));
+        nodes.add(new TreeNode(new Dir("目录五")));
 
         rv.setLayoutManager(new LinearLayoutManager(this));
         adapter = new TreeViewAdapter(nodes, Arrays.asList(new FileNodeBinder(), new DirectoryNodeBinder()));
-        // whether collapse child nodes when their parent node was close.
-//        adapter.ifCollapseChildWhileCollapseParent(true);
 
         adapter.setOnTreeNodeListener(new TreeViewAdapter.OnTreeNodeListener() {
             @Override
@@ -70,8 +53,9 @@ public class MainActivity extends AppCompatActivity {
                 if (!node.isLeaf()) {
                     //Update and toggle the node.
                     onToggle(!node.isExpand(), holder);
-//                    if (!node.isExpand())
-//                        adapter.collapseBrotherNode(node);
+                    /*if (!node.isExpand()){
+                        adapter.collapseBrotherNode(node);
+                    }*/
                 }
                 return false;
             }
