@@ -47,6 +47,7 @@ public class TreeViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         for (TreeNode node : nodes) {
             displayNodes.add(node);
             if (!node.isLeaf() && node.isExpand())
+                //递归算法
                 findDisplayNodes(node.getChildList());
         }
     }
